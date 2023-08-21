@@ -1,141 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toine Pennings</title>
     <style>
-        @font-face {
-            font-family: 'Gotham';
-            src: url('./fonts/Gotham-Light.eot');
-            src: url('./fonts/Gotham-Light.eot?#iefix') format('embedded-opentype'),
-                url('./fonts/Gotham-Light.woff2') format('woff2'),
-                url('./fonts/Gotham-Light.woff') format('woff'),
-                url('./fonts/Gotham-Light.ttf') format('truetype'),
-                url('./fonts/Gotham-Light.svg#Gotham-Light') format('svg');
-            font-weight: 300;
-            font-style: normal;
-            font-display: swap;
-        }
+      @font-face {
+        font-family: "Gotham";
+        src: url("./fonts/Gotham-Light.eot");
+        src: url("./fonts/Gotham-Light.eot?#iefix") format("embedded-opentype"),
+          url("./fonts/Gotham-Light.woff2") format("woff2"),
+          url("./fonts/Gotham-Light.woff") format("woff"),
+          url("./fonts/Gotham-Light.ttf") format("truetype"),
+          url("./fonts/Gotham-Light.svg#Gotham-Light") format("svg");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
 
-        @font-face {
-            font-family: 'Sentinel';
-            src: url('./fonts/Sentinel-Semibold.eot');
-            src: url('./fonts/Sentinel-Semibold.eot?#iefix') format('embedded-opentype'),
-                url('./fonts/Sentinel-Semibold.woff2') format('woff2'),
-                url('./fonts/Sentinel-Semibold.woff') format('woff'),
-                url('./fonts/Sentinel-Semibold.ttf') format('truetype'),
-                url('./fonts/Sentinel-Semibold.svg#Sentinel-Semibold') format('svg');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
+      @font-face {
+        font-family: "Sentinel";
+        src: url("./fonts/Sentinel-Semibold.eot");
+        src: url("./fonts/Sentinel-Semibold.eot?#iefix")
+            format("embedded-opentype"),
+          url("./fonts/Sentinel-Semibold.woff2") format("woff2"),
+          url("./fonts/Sentinel-Semibold.woff") format("woff"),
+          url("./fonts/Sentinel-Semibold.ttf") format("truetype"),
+          url("./fonts/Sentinel-Semibold.svg#Sentinel-Semibold") format("svg");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      html {
+        box-sizing: border-box;
+        font-size: 12px;
+        height: 100%;
+        font-family: "Gotham";
+      }
+      h1 {
+        font-family: "Sentinel";
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        background: rgba(10, 10, 10, 1);
+      }
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      ol,
+      ul {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        height: 100%;
+        font-size: 16px;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .container {
+        width: 100%;
+        min-height: 100%;
+        overflow: auto;
+        background-size: cover;
+        background-position: center right;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .content-text {
+        color: #a5a59d;
+        padding: 3rem;
+        background: rgba(10, 10, 10, 0.85);
+      }
+      .content-logo {
+        margin-top: 3rem;
+      }
+      h1 {
+        font-size: 22px;
+        line-height: 1.2;
+      }
+      p {
+        font-size: 16px;
+      }
+      h1,
+      p {
+        margin-bottom: 2rem;
+      }
+      a {
+        color: #a5a59d;
+      }
+      .fade-in {
+        animation: fade 4s infinite;
+      }
+      @keyframes fade {
+        0% {
+          opacity: 0;
         }
+        20% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .slider-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      @media (min-width: 720px) {
         html {
-            box-sizing: border-box;
-            font-size: 12px;
-            height:100%;
-            font-family: 'Gotham';
+          font-size: 16px;
+        }
+        .content {
+          max-width: 50rem;
+          margin: 5rem 5rem 0 5rem;
         }
         h1 {
-            font-family: 'Sentinel';
-        }
-        *, *:before, *:after {
-            box-sizing: inherit;
-        }
-        body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-            margin: 0;
-            padding: 0;
-            font-weight: normal;
-            height:100%;
-            font-size: 16px;
-        }
-        ol, ul {
-            list-style: none;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        .container {
-            background-image: url('./images/foto\ Low\ Res.jpg');
-            width: 100%;
-            min-height: 100%;
-            overflow: auto;
-            background-size: cover;
-            background-position: center right;
-        }
-       
-        .content-text {
-            color: #a5a59d;
-            padding: 3rem;
-            background: rgba(10,10,10, .85);
-        }
-        .content-logo {
-            margin-top: 3rem;
-        }
-        h1 {
-            font-size: 22px;
-            line-height: 1.2;
+          font-size: 36px;
+          line-height: 1.2;
         }
         p {
-            font-size: 16px;
+          font-size: 22px;
         }
-        h1 , p {
-            margin-bottom: 2rem;
-        } 
-        a {
-            color: #a5a59d;
-        }
-        @media (min-width: 720px) {
-            html {
-                font-size: 16px;
-            }
-            .content {
-                max-width: 50rem;
-                margin: 5rem 5rem 0 5rem;
-            }
-            h1 {
-                font-size: 36px;
-                line-height: 1.2;
-            }
-            p {
-                font-size: 22px
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="content">
-            <div class="content-text">
-                <h1>Ik had hier natuurlijk een grap kunnen<br>
-                maken met ‘under construction’</h1>
+      <div class="slider-container" id="slider"></div>
+      <div class="content">
+        <div class="content-text">
+          <h1>
+            Ik had hier natuurlijk een grap kunnen<br />
+            maken met ‘under construction’
+          </h1>
 
-                <p>Want de link naar mijn werk als bouwkundig<br>
-                    interieurarchitect is snel gelegd.</p>
+          <p>
+            Want de link naar mijn werk als bouwkundig<br />
+            interieurarchitect is snel gelegd.
+          </p>
 
-                <p>Maar ik besteed mijn tijd liever aan het afronden<br>
-                van deze nieuwe website, zodat jij binnenkort<br>
-                kan zien wat ik voor je kan betekenen.</p>
+          <p>
+            Maar ik besteed mijn tijd liever aan het afronden<br />
+            van deze nieuwe website, zodat jij binnenkort<br />
+            kan zien wat ik voor je kan betekenen.
+          </p>
 
-                <p>Wil je niet wachten?</p>
+          <p>Wil je niet wachten?</p>
 
-                <p>Bel me op <a href="tel:06 534 077 54">06 534 077 54</a></p>
+          <p>Bel me op <a href="tel:06 534 077 54">06 534 077 54</a></p>
 
-                <p>Of stuur me een mail via <a href="mailto:tp@toinepennings.nl">tp@toinepennings.nl</a></p>
+          <p>
+            Of stuur me een mail via
+            <a href="mailto:tp@toinepennings.nl">tp@toinepennings.nl</a>
+          </p>
 
-                <p>Ik kijk ernaar uit om je te spreken!</p>
+          <p>Ik kijk ernaar uit om je te spreken!</p>
 
-                <p>Cheers,<br>
-                    Toine Pennings<br>
-                    <em>Tot in detail.</em></p>
-
-            </div>
-            <div class="content-logo">
-                <img style="opacity: .80;" src="./images/TP_monogramcirkel_zwart_120pt.svg" width="200" height="200" />
-            </div>
+          <p>
+            Cheers,<br />
+            Toine Pennings<br />
+            <em>Tot in detail.</em>
+          </p>
         </div>
+        <div class="content-logo">
+          <img
+            style="opacity: 0.8"
+            src="./images/TP_monogramcirkel_zwart_120pt.svg"
+            width="200"
+            height="200"
+          />
+        </div>
+      </div>
     </div>
-</body>
+    <script>
+      if (document.getElementById("slider")) {
+        let slides = [
+          `<img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc-VsqCdALfvoLw3VVEfsnxfgIn9k_-E6hPk_UMcXcIy-DnNBvxE0TDGRyZFXhRzX3Yc1q5aCpw-beaZA2HcmoEajdHjiMWuOxa-CICWoKWmIKo7qrETDUkVkcEB-wDuaUHTDQxgdldJufdPVOF6c4P6=w2219-h1171-s-no?authuser=0"
+            />`,
+          `<img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc9-QBwy5yyI705cMnYwzEZFJdKLrFSfDOf5LETnMMKGPf2iXAVWTkeezr3HG2bwj1S2MKewcmqb9--3KYxrDd0gVrci1t9veSFrVU8KyWfQfQy-XGnIEoZUAQH0iKuAoVTPmyqCG2uoiKg7vd1juGv-=w4000-h2250-s-no?authuser=0"
+            />`,
+            `<img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc8mbsvpQd9FEnACr53Aziyv01vpgGbxIoGmefUZxiQTnp09UFqyUU7f4dKEOcFW2MgfSgL0_JpzkK4JAcm5LD_BYHET1uOoZpeqSjlDm8ZvRXuv5MXySG_XlN5A5URGwOKdktJKJ2EEfw6AjZQAfch0=w4000-h2250-s-no?authuser=0"
+            />`,
+            `<img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc88_Z85CpEYdKqq6CNOExlnODzT0PXrx99u9SnXeECEAxoCkAW9oexS2WlDLXil5WQlHUTwzIrBZbFvw4enBlyR3mM7gC4Fpbwo_l_l-UHS_pFeEl3ckvtfNEDxJm6TI3b7bnZRPhqlZQlkiOr8cC9G=w2475-h1250-s-no?authuser=0"
+            />`,
+            `<img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc-Ngyx2vlJY1gem9L-5ZYMOweSduQhHfiEDi1OvEh33KuhaENgdW3VoUn-qu5yJL5mhJudGjQcSEVbGOggEkRqmAwljcat6tlyQwjH9a4RpgER9rzi9BHmze5K8Ac1MhtkX9WSLGKw95uQtnGG-jJGo=w2450-h1250-s-no?authuser=0"
+            />`,
+            `<img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc_vgcUo-3KT9msl_HoVq8ucuYHv-WQyX5eHJjqwji38k2l4GWIz9D2xnnplCwpe4smc6RGLNNGkyssktN1DcUQc5LuM_DTgrRb7XpWDdLibKxUH9fApfyKHWSbO_sVUhHitwG08EXI33iNck1yfUwyW=w2450-h1250-s-no?authuser=0"
+            />`,
+            `<img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc_I9X76aks0SvcFEPIJVUsTtBesx7Gz95nTR8lBG3UPPaM9wsm-i-OqJDNFcfBuoe8bM1jB5F36d8hpvIIbdVZtw8_Q5-Ake2xNJEsaD6f68MCnPOtHbKkYAz3yAjktLhS8aKYyyQlLxn6M_0qI6C0q=w2252-h1250-s-no?authuser=0"
+
+            />`,
+
+            
+        ];
+        let i = 0;
+        const slider = () => {
+          document.getElementById("slider").innerHTML = slides[i];
+          document.getElementById("slider").classList.add("fade-in");
+          i < slides.length - 1 ? i++ : (i = 0);
+        };
+        slider(); // Start slider immediately
+        setInterval(slider, 4000); // Slide every 4 seconds
+      }
+    </script>
+  </body>
 </html>
