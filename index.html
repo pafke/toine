@@ -132,8 +132,15 @@
       }
       .image {
         object-fit: cover;
+        object-position: center center;
         width: 100%;
         height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .active {
+        z-index: 1;
       }
       @media (min-width: 720px) {
         html {
@@ -155,7 +162,31 @@
   </head>
   <body>
     <div class="container">
-      <div class="slider-container" id="slider"></div>
+      <div class="slider-container" id="slider">
+        <img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc-VsqCdALfvoLw3VVEfsnxfgIn9k_-E6hPk_UMcXcIy-DnNBvxE0TDGRyZFXhRzX3Yc1q5aCpw-beaZA2HcmoEajdHjiMWuOxa-CICWoKWmIKo7qrETDUkVkcEB-wDuaUHTDQxgdldJufdPVOF6c4P6=w2219-h1171-s-no?authuser=0"
+            /><img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc9-QBwy5yyI705cMnYwzEZFJdKLrFSfDOf5LETnMMKGPf2iXAVWTkeezr3HG2bwj1S2MKewcmqb9--3KYxrDd0gVrci1t9veSFrVU8KyWfQfQy-XGnIEoZUAQH0iKuAoVTPmyqCG2uoiKg7vd1juGv-=w4000-h2250-s-no?authuser=0"
+            /><img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc8mbsvpQd9FEnACr53Aziyv01vpgGbxIoGmefUZxiQTnp09UFqyUU7f4dKEOcFW2MgfSgL0_JpzkK4JAcm5LD_BYHET1uOoZpeqSjlDm8ZvRXuv5MXySG_XlN5A5URGwOKdktJKJ2EEfw6AjZQAfch0=w4000-h2250-s-no?authuser=0"
+            /><img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc88_Z85CpEYdKqq6CNOExlnODzT0PXrx99u9SnXeECEAxoCkAW9oexS2WlDLXil5WQlHUTwzIrBZbFvw4enBlyR3mM7gC4Fpbwo_l_l-UHS_pFeEl3ckvtfNEDxJm6TI3b7bnZRPhqlZQlkiOr8cC9G=w2475-h1250-s-no?authuser=0"
+            /><img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc-Ngyx2vlJY1gem9L-5ZYMOweSduQhHfiEDi1OvEh33KuhaENgdW3VoUn-qu5yJL5mhJudGjQcSEVbGOggEkRqmAwljcat6tlyQwjH9a4RpgER9rzi9BHmze5K8Ac1MhtkX9WSLGKw95uQtnGG-jJGo=w2450-h1250-s-no?authuser=0"
+            /><img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc_vgcUo-3KT9msl_HoVq8ucuYHv-WQyX5eHJjqwji38k2l4GWIz9D2xnnplCwpe4smc6RGLNNGkyssktN1DcUQc5LuM_DTgrRb7XpWDdLibKxUH9fApfyKHWSbO_sVUhHitwG08EXI33iNck1yfUwyW=w2450-h1250-s-no?authuser=0"
+            /><img
+            class="image"
+            src="https://lh3.googleusercontent.com/pw/AIL4fc_I9X76aks0SvcFEPIJVUsTtBesx7Gz95nTR8lBG3UPPaM9wsm-i-OqJDNFcfBuoe8bM1jB5F36d8hpvIIbdVZtw8_Q5-Ake2xNJEsaD6f68MCnPOtHbKkYAz3yAjktLhS8aKYyyQlLxn6M_0qI6C0q=w2252-h1250-s-no?authuser=0"
+
+            />
+      </div>
       <div class="content">
         <div class="content-text">
           <h1>
@@ -202,49 +233,59 @@
       </div>
     </div>
     <script>
-      if (document.getElementById("slider")) {
-        let slides = [
-          `<img
-            class="image"
-            src="https://lh3.googleusercontent.com/pw/AIL4fc-VsqCdALfvoLw3VVEfsnxfgIn9k_-E6hPk_UMcXcIy-DnNBvxE0TDGRyZFXhRzX3Yc1q5aCpw-beaZA2HcmoEajdHjiMWuOxa-CICWoKWmIKo7qrETDUkVkcEB-wDuaUHTDQxgdldJufdPVOF6c4P6=w2219-h1171-s-no?authuser=0"
-            />`,
-          `<img
-            class="image"
-            src="https://lh3.googleusercontent.com/pw/AIL4fc9-QBwy5yyI705cMnYwzEZFJdKLrFSfDOf5LETnMMKGPf2iXAVWTkeezr3HG2bwj1S2MKewcmqb9--3KYxrDd0gVrci1t9veSFrVU8KyWfQfQy-XGnIEoZUAQH0iKuAoVTPmyqCG2uoiKg7vd1juGv-=w4000-h2250-s-no?authuser=0"
-            />`,
-            `<img
-            class="image"
-            src="https://lh3.googleusercontent.com/pw/AIL4fc8mbsvpQd9FEnACr53Aziyv01vpgGbxIoGmefUZxiQTnp09UFqyUU7f4dKEOcFW2MgfSgL0_JpzkK4JAcm5LD_BYHET1uOoZpeqSjlDm8ZvRXuv5MXySG_XlN5A5URGwOKdktJKJ2EEfw6AjZQAfch0=w4000-h2250-s-no?authuser=0"
-            />`,
-            `<img
-            class="image"
-            src="https://lh3.googleusercontent.com/pw/AIL4fc88_Z85CpEYdKqq6CNOExlnODzT0PXrx99u9SnXeECEAxoCkAW9oexS2WlDLXil5WQlHUTwzIrBZbFvw4enBlyR3mM7gC4Fpbwo_l_l-UHS_pFeEl3ckvtfNEDxJm6TI3b7bnZRPhqlZQlkiOr8cC9G=w2475-h1250-s-no?authuser=0"
-            />`,
-            `<img
-            class="image"
-            src="https://lh3.googleusercontent.com/pw/AIL4fc-Ngyx2vlJY1gem9L-5ZYMOweSduQhHfiEDi1OvEh33KuhaENgdW3VoUn-qu5yJL5mhJudGjQcSEVbGOggEkRqmAwljcat6tlyQwjH9a4RpgER9rzi9BHmze5K8Ac1MhtkX9WSLGKw95uQtnGG-jJGo=w2450-h1250-s-no?authuser=0"
-            />`,
-            `<img
-            class="image"
-            src="https://lh3.googleusercontent.com/pw/AIL4fc_vgcUo-3KT9msl_HoVq8ucuYHv-WQyX5eHJjqwji38k2l4GWIz9D2xnnplCwpe4smc6RGLNNGkyssktN1DcUQc5LuM_DTgrRb7XpWDdLibKxUH9fApfyKHWSbO_sVUhHitwG08EXI33iNck1yfUwyW=w2450-h1250-s-no?authuser=0"
-            />`,
-            `<img
-            class="image"
-            src="https://lh3.googleusercontent.com/pw/AIL4fc_I9X76aks0SvcFEPIJVUsTtBesx7Gz95nTR8lBG3UPPaM9wsm-i-OqJDNFcfBuoe8bM1jB5F36d8hpvIIbdVZtw8_Q5-Ake2xNJEsaD6f68MCnPOtHbKkYAz3yAjktLhS8aKYyyQlLxn6M_0qI6C0q=w2252-h1250-s-no?authuser=0"
-
-            />`,
-
+      startImageTransition();
+      
+      function startImageTransition() {
+          var images = document.getElementsByClassName("image");
+      
+          for (var i = 0; i < images.length; ++i) {
+              images[i].style.opacity = 1;
+          }
+      
+          var top = 1;
+      
+          var cur = images.length - 1;
+      
+          setInterval(changeImage, 3000);
+      
+          async function changeImage() {
+      
+              var nextImage = (1 + cur) % images.length;
+      
+              images[cur].style.zIndex = top + 1;
+              images[nextImage].style.zIndex = top;
+      
+              await transition();
+      
+              images[cur].style.zIndex = top;
+      
+              images[nextImage].style.zIndex = top + 1;
+      
+              top = top + 1;
+      
+              images[cur].style.opacity = 1;
             
-        ];
-        let i = 0;
-        const slider = () => {
-          document.getElementById("slider").innerHTML = slides[i];
-          document.getElementById("slider").classList.add("fade-in");
-          i < slides.length - 1 ? i++ : (i = 0);
-        };
-        slider(); // Start slider immediately
-        setInterval(slider, 4000); // Slide every 4 seconds
+              cur = nextImage;
+      
+          }
+      
+          function transition() {
+              return new Promise(function(resolve, reject) {
+                  var del = 0.01;
+      
+                  var id = setInterval(changeOpacity, 10);
+      
+                  function changeOpacity() {
+                      images[cur].style.opacity -= del;
+                      if (images[cur].style.opacity <= 0) {
+                          clearInterval(id);
+                          resolve();
+                      }
+                  }
+      
+              })
+          }
       }
-    </script>
+  </script>
   </body>
 </html>
